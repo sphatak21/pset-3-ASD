@@ -38,6 +38,7 @@ public class SimpleStack {
         tempArray = populateTempArr(mainArray, -1);
         mainArray = tempArray;
         size--;
+        top = setTop(); 
         return topVal;
     }
     public void push(String item){
@@ -51,8 +52,10 @@ public class SimpleStack {
         tempArray[tempArray.length-1] = item;
         mainArray = tempArray;
         size++;
+        top = setTop();
     }
     public int search(String s){
+        top = setTop();
         for(int i = 0; i<size; i++){
             if(mainArray[i] == s){
                 int returnInt = 1 + (top - i);
